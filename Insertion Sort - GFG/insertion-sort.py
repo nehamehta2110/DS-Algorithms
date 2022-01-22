@@ -7,6 +7,8 @@ class Solution:
             for j in range(i-1, -1,-1):
                 if alist[j]> alist[j+1]:
                     alist[j], alist[j+1] = alist[j+1], alist[j]
+                else:
+                    break
 
 #{ 
 #  Driver Code Starts
