@@ -3,20 +3,19 @@
 class Solution:
     def sort012(self,arr,n):
         # code here
-        num1s, num2s = 0, 0
-        for i in range(n):
-            if arr[i]==1:
-                num1s+=1
-            if arr[i]==2:
-                num2s+=1
+        lo, mid = 0, 0
+        hi = n-1
         
-        for i in range(n):
-            if i<(n-num1s-num2s):
-                arr[i]=0
-            elif i<(n-num2s):
-                arr[i] = 1
+        while mid<=hi:
+            if arr[mid]==0:
+                arr[mid], arr[lo] = arr[lo], arr[mid]
+                mid+=1
+                lo+=1
+            elif arr[mid]==1:
+                mid+=1
             else:
-                arr[i] = 2
+                arr[mid],arr[hi]=arr[hi],arr[mid]
+                hi-=1
                 
                 
 
