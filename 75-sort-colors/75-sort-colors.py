@@ -1,0 +1,25 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        low = 0 
+        mid = 0
+        hi = len(nums) - 1
+        
+        
+        for i in range(len(nums)):
+            if nums[mid] == 0:
+                nums[low], nums[mid] = nums[mid], nums[low]
+                low+=1
+                mid+=1
+                
+            elif nums[mid] == 1:
+                mid+=1
+                
+            elif nums[mid] == 2:
+                nums[mid], nums[hi] = nums[hi], nums[mid]
+                hi-=1
+                
+                    
+                
